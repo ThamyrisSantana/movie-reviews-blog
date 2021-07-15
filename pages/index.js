@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 
 import Header from "../components/header/header";
 import Banner from "../components/banner/banner";
+import Card from "../components/movie-card/card";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <Banner />
-        <h1 className={styles.title}>Hello</h1>
+        <Card />
       </main>
     </div>
   );

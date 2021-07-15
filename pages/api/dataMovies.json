@@ -1,0 +1,32 @@
+{
+  "movies": [
+    {
+      "title": "The Lord of the Rings: The Return of the King",
+      "descripton": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "stars": "4,5",
+      "movieImg": "https://upload.wikimedia.org/wikipedia/pt/0/0d/EsdlaIII.jpg",
+      "id": 1
+    },
+    {
+      "title": "Star Wars: Episode III – Revenge of the Sith",
+      "descripton": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "stars": "5",
+      "movieImg": "https://upload.wikimedia.org/wikipedia/pt/5/58/Star_Wars_Epis%C3%B3dio_III_A_Vingan%C3%A7a_dos_Sith.jpg",
+      "id": 2
+    },
+    {
+      "title": "Okja",
+      "descripton": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "stars": "3,5",
+      "movieImg": "https://upload.wikimedia.org/wikipedia/pt/f/f6/Okja.png",
+      "id": 3
+    },
+    {
+      "title": "Fight Club",
+      "descripton": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "stars": "5",
+      "movieImg": "",
+      "id": 4
+    }
+  ]
+}
