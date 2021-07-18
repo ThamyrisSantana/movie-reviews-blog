@@ -1,5 +1,5 @@
 import React from "react";
-// import Image from "next/image";
+import Image from "next/image";
 // import bannerImg from "./background.jpg";
 import styles from "./banner.module.css";
 

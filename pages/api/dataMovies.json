@@ -2,31 +2,48 @@
   "movies": [
     {
       "title": "The Lord of the Rings: The Return of the King",
-      "descripton": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "stars": "4,5",
-      "movieImg": "https://upload.wikimedia.org/wikipedia/pt/0/0d/EsdlaIII.jpg",
-      "id": 1
+      "description": "Aragorn is revealed as the heir to the ancient kings as he, Gandalf and the other members of the broken fellowship struggle to save Gondor from Sauron’s forces. Meanwhile, Frodo and Sam take the ring closer to the heart of Mordor, the dark lord’s realm.",
+      "stars": "4,4",
+      "movieImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy7DZZXsbe4eHOeV2kZQH4q4jZx2pqELDaB_aAu-FCALwaMive",
+      "id": 1,
+      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Quam nulla porttitor massa id neque. Dictum fusce ut placerat orci. Et netus et malesuada fames ac turpis egestas maecenas. Amet commodo nulla facilisi nullam vehicula ipsum. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Enim nec dui nunc mattis enim. Tempus quam pellentesque nec nam aliquam. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Non sodales neque sodales ut etiam sit amet nisl purus. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Sed adipiscing diam donec adipiscing. Non blandit massa enim nec dui nunc mattis enim ut.                                                            Metus vulputate eu scelerisque felis imperdiet proin fermentum. Ipsum a arcu cursus vitae. Amet tellus cras adipiscing enim eu turpis egestas pretium. Nulla posuere sollicitudin aliquam ultrices. Ut etiam sit amet nisl. Proin libero nunc consequat interdum varius sit amet mattis. Sit amet venenatis urna cursus eget nunc scelerisque. Leo in vitae turpis massa sed elementum. Odio ut sem nulla pharetra diam sit amet nisl. Pretium viverra suspendisse potenti nullam ac tortor vitae purus. ",
+      "director": "Peter Jackson"
     },
     {
       "title": "Star Wars: Episode III – Revenge of the Sith",
-      "descripton": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "stars": "5",
-      "movieImg": "https://upload.wikimedia.org/wikipedia/pt/5/58/Star_Wars_Epis%C3%B3dio_III_A_Vingan%C3%A7a_dos_Sith.jpg",
-      "id": 2
+      "description": "Three years into the Clone Wars, the Jedi rescue Palpatine from Count Dooku. As Obi-Wan pursues a new threat, Anakin acts as a double agent between the Jedi Council and Palpatine and is lured into a sinister plan to rule the galaxy.",
+      "stars": "3,4",
+      "movieImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh3Ing1lz5S6XRVBTUznLNtGQKmdCYQZQodcFF6Q1Gp__HVWli",
+      "id": 2,
+      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Quam nulla porttitor massa id neque. Dictum fusce ut placerat orci. Et netus et malesuada fames ac turpis egestas maecenas. Amet commodo nulla facilisi nullam vehicula ipsum. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Enim nec dui nunc mattis enim. Tempus quam pellentesque nec nam aliquam. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Non sodales neque sodales ut etiam sit amet nisl purus. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Sed adipiscing diam donec adipiscing. Non blandit massa enim nec dui nunc mattis enim ut.                                                            Metus vulputate eu scelerisque felis imperdiet proin fermentum. Ipsum a arcu cursus vitae. Amet tellus cras adipiscing enim eu turpis egestas pretium. Nulla posuere sollicitudin aliquam ultrices. Ut etiam sit amet nisl. Proin libero nunc consequat interdum varius sit amet mattis. Sit amet venenatis urna cursus eget nunc scelerisque. Leo in vitae turpis massa sed elementum. Odio ut sem nulla pharetra diam sit amet nisl. Pretium viverra suspendisse potenti nullam ac tortor vitae purus. ",
+      "director": "George Lucas"
     },
     {
-      "title": "Okja",
-      "descripton": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "stars": "3,5",
-      "movieImg": "https://upload.wikimedia.org/wikipedia/pt/f/f6/Okja.png",
-      "id": 3
+      "title": "Luca",
+      "description": "Two young boys experience an unforgettable Italian summer filled with gelato, pasta and endless scooter rides. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface.",
+      "stars": "4,0",
+      "movieImg": "https://cdn.ome.lt/mTE1KKHcu69yrrHeOkaeNbV-ZC8=/fit-in/1070x750/smart/filer_public/48/fa/48fa45cf-bbca-46cc-9cc1-7e8af3df34ef/e246crnvkaabq-7.jpg",
+      "id": 3,
+      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Quam nulla porttitor massa id neque. Dictum fusce ut placerat orci. Et netus et malesuada fames ac turpis egestas maecenas. Amet commodo nulla facilisi nullam vehicula ipsum. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Enim nec dui nunc mattis enim. Tempus quam pellentesque nec nam aliquam. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Non sodales neque sodales ut etiam sit amet nisl purus. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Sed adipiscing diam donec adipiscing. Non blandit massa enim nec dui nunc mattis enim ut.                                                            Metus vulputate eu scelerisque felis imperdiet proin fermentum. Ipsum a arcu cursus vitae. Amet tellus cras adipiscing enim eu turpis egestas pretium. Nulla posuere sollicitudin aliquam ultrices. Ut etiam sit amet nisl. Proin libero nunc consequat interdum varius sit amet mattis. Sit amet venenatis urna cursus eget nunc scelerisque. Leo in vitae turpis massa sed elementum. Odio ut sem nulla pharetra diam sit amet nisl. Pretium viverra suspendisse potenti nullam ac tortor vitae purus. ",
+      "director": "Enrico Casarosa"
     },
     {
       "title": "Fight Club",
-      "descripton": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "stars": "5",
-      "movieImg": "",
-      "id": 4
+      "description": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+      "stars": "4,3",
+      "movieImg": "https://flxt.tmsimg.com/assets/p23069_p_v13_as.jpg",
+      "id": 4,
+      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Quam nulla porttitor massa id neque. Dictum fusce ut placerat orci. Et netus et malesuada fames ac turpis egestas maecenas. Amet commodo nulla facilisi nullam vehicula ipsum. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Enim nec dui nunc mattis enim. Tempus quam pellentesque nec nam aliquam. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Non sodales neque sodales ut etiam sit amet nisl purus. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Sed adipiscing diam donec adipiscing. Non blandit massa enim nec dui nunc mattis enim ut.                                                            Metus vulputate eu scelerisque felis imperdiet proin fermentum. Ipsum a arcu cursus vitae. Amet tellus cras adipiscing enim eu turpis egestas pretium. Nulla posuere sollicitudin aliquam ultrices. Ut etiam sit amet nisl. Proin libero nunc consequat interdum varius sit amet mattis. Sit amet venenatis urna cursus eget nunc scelerisque. Leo in vitae turpis massa sed elementum. Odio ut sem nulla pharetra diam sit amet nisl. Pretium viverra suspendisse potenti nullam ac tortor vitae purus. ",
+      "director": "David Fincher"
+    },
+    {
+      "title": "Coco",
+      "description": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel’s family history.",
+      "stars": "4,2",
+      "movieImg": "https://lumiere-a.akamaihd.net/v1/images/p_coco_19736_fd5fa537.jpeg",
+      "id": 5,
+      "review": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Quam nulla porttitor massa id neque. Dictum fusce ut placerat orci. Et netus et malesuada fames ac turpis egestas maecenas. Amet commodo nulla facilisi nullam vehicula ipsum. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Enim nec dui nunc mattis enim. Tempus quam pellentesque nec nam aliquam. Leo integer malesuada nunc vel risus commodo viverra maecenas accumsan. Non sodales neque sodales ut etiam sit amet nisl purus. Praesent elementum facilisis leo vel fringilla est ullamcorper eget nulla. Sed adipiscing diam donec adipiscing. Non blandit massa enim nec dui nunc mattis enim ut.                                                            Metus vulputate eu scelerisque felis imperdiet proin fermentum. Ipsum a arcu cursus vitae. Amet tellus cras adipiscing enim eu turpis egestas pretium. Nulla posuere sollicitudin aliquam ultrices. Ut etiam sit amet nisl. Proin libero nunc consequat interdum varius sit amet mattis. Sit amet venenatis urna cursus eget nunc scelerisque. Leo in vitae turpis massa sed elementum. Odio ut sem nulla pharetra diam sit amet nisl. Pretium viverra suspendisse potenti nullam ac tortor vitae purus.",
+      "director": "Adrian Molina, Lee Unkrich"
     }
   ]
 }

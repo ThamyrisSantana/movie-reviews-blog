@@ -1,0 +1,97 @@
+.cardWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+}
+
+.cardContainer {
+  width: 13rem;
+  height: 31rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 5rem;
+
+  transition: transform 0.3s ease-out;
+}
+
+.card {
+  width: 100%;
+  height: 60%;
+
+  background: #fff;
+  box-shadow: 5px 5px 28px rgba(0, 0, 0, 0.25);
+
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.cardContainer:hover {
+  transform: scale(1.1);
+}
+
+.movieInfo {
+  width: 100%;
+  height: 5rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 0;
+
+  h2 {
+    font-size: 14px;
+    margin: 0;
+
+    color: #484747;
+  }
+
+  p {
+    font-size: 12px;
+    display: flex;
+    margin: 0 10px;
+    color: #484747;
+    font-weight: 500;
+  }
+
+  .star {
+    color: #ffb442;
+    align-self: center;
+    width: 12px;
+    height: 12px;
+  }
+}
+.reviewBtn {
+  width: 50%;
+  height: 40px;
+
+  // background: #ef3c66;
+  background: #7868e6;
+  color: #edeef7;
+  font-size: 1rem;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  justify-self: flex-end;
+  align-self: center;
+}
+
+.reviewBtn:hover {
+  filter: brightness(0.9);
+}
