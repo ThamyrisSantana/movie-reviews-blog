@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { HiMenuAlt2 } from "react-icons/hi";
 import styles from "./Header.module.scss";
 
 export default function Menu() {
@@ -17,8 +17,8 @@ export default function Menu() {
   return (
     <>
       {menuToggle ? (
-        <div className={styles.menuWraper}>
-          <HiOutlineMenuAlt3 className={styles.menu} onClick={changeMenu} />
+        <div className={styles.menuContainer}>
+          <HiMenuAlt2 className={styles.menu} onClick={changeMenu} />
           <ul className={styles.menuItemsContainer}>
             <Link href="/">
               <a className={styles.menuItems}>Home</a>
@@ -34,8 +34,8 @@ export default function Menu() {
           </ul>
         </div>
       ) : (
-        <div>
-          <HiOutlineMenuAlt3 className={styles.menu} onClick={changeMenu} />
+        <div className={styles.menuContainer}>
+          <HiMenuAlt2 className={styles.menu} onClick={changeMenu} />
         </div>
       )}
     </>

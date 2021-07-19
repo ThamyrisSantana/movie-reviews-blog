@@ -1,5 +1,39 @@
-.main {
+.reviewPage {
   width: 100vw;
+  height: 100vh;
+
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+
+.mainOff {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  width: 5rem;
+  height: 5rem;
+
+  border: 10px solid #d8d2c4;
+  border-left-color: #7868e6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main {
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -112,14 +146,23 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 612px) {
   .movieSection {
+    width: 80%;
     img {
       height: 20rem;
     }
 
-    .movieDescription {
-      width: 20rem;
+    .movieInf {
+      margin-left: 0;
+
+      .movieDescription {
+        width: 20rem;
+        margin: 0;
+        p {
+          font-size: 1rem;
+        }
+      }
     }
   }
 }

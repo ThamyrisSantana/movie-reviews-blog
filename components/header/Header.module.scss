@@ -37,17 +37,22 @@
 
 @media (max-width: 1148px) {
   .menuContainer {
-    width: 10%;
+    width: 100%;
 
-    display: flex;
-    align-self: center;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+
+    z-index: 1000;
+    display: block;
 
     .menu {
       width: 2.5rem;
       height: 2.5rem;
       color: #edeef7;
+      justify-self: flex-end;
+      align-self: flex-start;
+      margin-left: 2rem;
+      cursor: pointer;
     }
 
     .menuItemsContainer {
@@ -57,10 +62,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+
+      padding-top: 5rem;
     }
     .menuItems {
-      margin: 0;
+      font-size: 2rem;
+      margin: 2rem 0;
+    }
+
+    .menuItems:hover {
+      filter: brightness(0.9);
+      text-decoration: overline;
     }
   }
 

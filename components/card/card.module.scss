@@ -28,10 +28,12 @@
   box-shadow: 5px 5px 28px rgba(0, 0, 0, 0.25);
 
   flex-shrink: 0;
+  border-radius: 5px;
 
   img {
     width: 100%;
     height: 100%;
+    border-radius: 5px;
   }
 }
 

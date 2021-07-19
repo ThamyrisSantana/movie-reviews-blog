@@ -37,7 +37,9 @@ export default function Review() {
 
       <Header />
       {isLoading ? (
-        <div>Loading...</div>
+        <main className={styles.mainOff}>
+          <div className={styles.loading}></div>
+        </main>
       ) : (
         <main className={styles.main}>
           <section className={styles.movieSection}>
