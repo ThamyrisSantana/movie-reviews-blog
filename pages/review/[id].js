@@ -5,6 +5,7 @@ import styles from "./reviews.module.scss";
 
 import Head from "next/head";
 import Header from "../../components/header/header";
+import Loanding from "../../components/loading/Loanding";
 import { HiStar } from "react-icons/hi";
 
 export default function Review() {
@@ -38,7 +39,7 @@ export default function Review() {
       <Header />
       {isLoading ? (
         <main className={styles.mainOff}>
-          <div className={styles.loading}></div>
+          <Loanding />
         </main>
       ) : (
         <main className={styles.main}>

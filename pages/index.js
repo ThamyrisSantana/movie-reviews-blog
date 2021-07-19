@@ -4,16 +4,21 @@ import { useState, useEffect } from "react";
 
 import Header from "../components/header/header";
 import Card from "../components/card/card";
+import Loanding from "../components/loading/Loanding";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     async function loadData() {
+      setIsLoading(true);
       const api = await fetch("http://localhost:3000/movies");
       const result = await api.json();
       console.log(result);
       setMovies(result);
+      setIsLoading(false);
     }
 
     loadData();
@@ -28,18 +33,24 @@ export default function Home() {
       </Head>
 
       <Header />
-      <main className={styles.main}>
-        {movies.map((movie) => (
-          <div className={styles.cardContainer} key={movie.id}>
-            <Card
-              title={movie.title}
-              image={movie.movieImg}
-              stars={movie.stars}
-              id={movie.id}
-            />
-          </div>
-        ))}
-      </main>
+      {isLoading ? (
+        <main className={styles.mainOff}>
+          <Loanding />
+        </main>
+      ) : (
+        <main className={styles.main}>
+          {movies.map((movie) => (
+            <div className={styles.cardContainer} key={movie.id}>
+              <Card
+                title={movie.title}
+                image={movie.movieImg}
+                stars={movie.stars}
+                id={movie.id}
+              />
+            </div>
+          ))}
+        </main>
+      )}
     </div>
   );
 }
