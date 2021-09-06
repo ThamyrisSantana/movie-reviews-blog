@@ -1,5 +1,5 @@
 .reviewPage {
-  width: 100vw;
+  width: calc(100vw - scrollbar);
   height: 100vh;
 
   // display: flex;
@@ -26,7 +26,7 @@
 }
 
 .movieSection {
-  width: 70%;
+  width: 80%;
 
   margin-top: 5rem;
 
@@ -45,7 +45,7 @@
     margin-left: 5rem;
 
     .movieTitle {
-      width: 30rem;
+      width: 75%;
       font-size: 2.7rem;
       display: flex;
       color: #3d444f;
@@ -54,10 +54,10 @@
     }
 
     .movieDescription {
-      width: 30rem;
+      width: 75%;
       font-size: 1.3rem;
       font-weight: 400;
-      line-height: 1.5;
+      line-height: 1.6;
 
       color: #484747;
       margin: 2rem 0;
