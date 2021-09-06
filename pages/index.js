@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Link from "next/link";
+
 import styles from "../styles/Home.module.scss";
 import { useState, useEffect } from "react";
 
@@ -6,9 +8,10 @@ import Header from "../components/header/header";
 import Card from "../components/card/card";
 import Loanding from "../components/loading/Loanding";
 
+import { HiArrowNarrowRight } from "react-icons/hi";
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -16,7 +19,6 @@ export default function Home() {
       setIsLoading(true);
       const api = await fetch("http://localhost:3000/movies");
       const result = await api.json();
-      console.log(result);
       setMovies(result);
       setIsLoading(false);
     }
@@ -38,18 +40,30 @@ export default function Home() {
           <Loanding />
         </main>
       ) : (
-        <main className={styles.main}>
-          {movies.map((movie) => (
-            <div className={styles.cardContainer} key={movie.id}>
-              <Card
-                title={movie.title}
-                image={movie.movieImg}
-                stars={movie.stars}
-                id={movie.id}
-              />
+        <>
+          <main className={styles.main}>
+            <div className={styles.reviewSectior}>
+              {movies.slice(0, 5).map((movie) => (
+                <div className={styles.cardContainer} key={movie.id}>
+                  <Card
+                    title={movie.title}
+                    image={movie.movieImg}
+                    stars={movie.stars}
+                    id={movie.id}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </main>
+            <div className={styles.linkDiv}>
+              <Link href="./reviews">
+                <a>
+                  See all reviews{" "}
+                  <HiArrowNarrowRight className={styles.rightIcon} />
+                </a>
+              </Link>
+            </div>
+          </main>
+        </>
       )}
     </div>
   );
