@@ -28,7 +28,7 @@ export default function Menu() {
               <a className={styles.menuItems}>About</a>
             </Link>
 
-            <Link href="/">
+            <Link href="/reviews">
               <a className={styles.menuItems}>Reviews</a>
             </Link>
           </ul>
