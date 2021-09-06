@@ -7,19 +7,63 @@
 
   .mainContainer {
     width: 100%;
+
     display: flex;
     flex-direction: column;
     justify-self: center;
+    align-items: center;
 
     .inputContainer {
-      width: 100%;
+      width: 28rem;
+      height: 2.8rem;
 
       display: flex;
       justify-content: center;
+      align-items: center;
+
+      background-color: #f6f4f4;
+      border: 1px solid rgba(134, 134, 134, 0.26);
+      margin-top: 2rem;
+      border-radius: 10px;
+
+      > div {
+        height: 2.5rem;
+
+        display: flex;
+        align-items: center;
+
+        text-align: center;
+        font-size: 1.3rem;
+        color: #696969;
+      }
+
+      input {
+        width: 25rem;
+        height: 2.5rem;
+
+        border: none;
+
+        padding-left: 0.5rem;
+
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: rgb(134, 134, 134);
+
+        background-color: transparent;
+
+        &::placeholder {
+          color: rgb(134, 134, 134);
+          font-weight: 500;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
     }
 
     .cardsContainer {
-      max-width: 100%;
+      max-width: 80%;
 
       display: flex;
       flex-direction: row;
