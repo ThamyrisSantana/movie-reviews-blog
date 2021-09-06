@@ -18,7 +18,9 @@ export default function Card({ title, stars, id, image }) {
           <h2 className={styles.carMovieTitlle}>{title}</h2>
         </div>
         <Link href={`/review/${id}`}>
-          <button className={styles.reviewBtn}>Review</button>
+          <a>
+            <button className={styles.reviewBtn}>Review</button>
+          </a>
         </Link>
       </div>
     </div>

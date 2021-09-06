@@ -18,6 +18,38 @@
   margin-left: 5rem;
 
   transition: transform 0.3s ease-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .reviewBtn {
+      width: 50%;
+      height: 40px;
+
+      // background: #ef3c66;
+      background: #7868e6;
+      color: #edeef7;
+      font-size: 1rem;
+      font-weight: 600;
+
+      border: none;
+      border-radius: 5px;
+
+      cursor: pointer;
+
+      justify-self: flex-end;
+      align-self: center;
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
 }
 
 .card {
@@ -36,10 +68,6 @@
     border-radius: 5px;
     object-fit: cover;
   }
-}
-
-.cardContainer:hover {
-  transform: scale(1.1);
 }
 
 .movieInfo {
@@ -76,25 +104,9 @@
     height: 12px;
   }
 }
-.reviewBtn {
-  width: 50%;
-  height: 40px;
 
-  // background: #ef3c66;
-  background: #7868e6;
-  color: #edeef7;
-  font-size: 1rem;
-  font-weight: 600;
-
-  border: none;
-  border-radius: 5px;
-
-  cursor: pointer;
-
-  justify-self: flex-end;
-  align-self: center;
-}
-
-.reviewBtn:hover {
-  filter: brightness(0.9);
+@media (max-width: 775px) {
+  .cardContainer {
+    margin: 0 2rem;
+  }
 }
