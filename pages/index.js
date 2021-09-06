@@ -43,7 +43,7 @@ export default function Home() {
         <>
           <main className={styles.main}>
             <div className={styles.reviewSectior}>
-              {movies.slice(0, 5).map((movie) => (
+              {movies.slice(0, 6).map((movie) => (
                 <div className={styles.cardContainer} key={movie.id}>
                   <Card
                     title={movie.title}
