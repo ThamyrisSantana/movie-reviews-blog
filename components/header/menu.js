@@ -24,12 +24,12 @@ export default function Menu() {
               <a className={styles.menuItems}>Home</a>
             </Link>
 
-            <Link href="/about">
-              <a className={styles.menuItems}>About</a>
-            </Link>
-
             <Link href="/reviews">
               <a className={styles.menuItems}>Reviews</a>
+            </Link>
+
+            <Link href="/newReview">
+              <a className={styles.headerItems}>New review</a>
             </Link>
           </ul>
         </div>

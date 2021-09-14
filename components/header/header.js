@@ -10,12 +10,12 @@ export default function Header() {
           <a className={styles.headerItems}>Home</a>
         </Link>
 
-        <Link href="/about">
-          <a className={styles.headerItems}>About</a>
-        </Link>
-
         <Link href="/reviews">
           <a className={styles.headerItems}>Reviews</a>
+        </Link>
+
+        <Link href="/newReview">
+          <a className={styles.headerItems}>New review</a>
         </Link>
       </ul>
       <div className={styles.menuContainer}>
