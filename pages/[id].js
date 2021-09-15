@@ -3,9 +3,10 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import styles from "./reviews.module.scss";
 
+import Link from "next/link";
 import Head from "next/head";
-import Header from "../../components/header/header";
-import Loanding from "../../components/loading/Loanding";
+import Header from "../components/header/header";
+import Loanding from "../components/loading/Loanding";
 import { HiStar } from "react-icons/hi";
 
 export default function Review() {
@@ -59,14 +60,19 @@ export default function Review() {
           </section>
           <section className={styles.reviewSection}>
             <hr />
-            <h1 className={styles.review}>
-              My review
-              <span>
-                <HiStar className={styles.star} />
-                {movie.stars}
-                <br />
-              </span>
-            </h1>
+            <div>
+              <h1 className={styles.review}>
+                My review
+                <span>
+                  <HiStar className={styles.star} />
+                  {movie.stars}
+                  <br />
+                </span>
+              </h1>
+              <Link href="../editReview.js">
+                <a>Edit review</a>
+              </Link>
+            </div>
             <p>{movie.review}</p>
           </section>
         </main>
