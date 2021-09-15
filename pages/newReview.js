@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/header/header";
 import Head from "next/head";
-import styles from "../styles/newReview.module.scss";
+import styles from "../styles/NewReview.module.scss";
 
 export default function NewReview() {
   const [movie, setMovie] = useState({});
