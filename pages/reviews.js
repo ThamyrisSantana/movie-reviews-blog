@@ -4,7 +4,7 @@ import Head from "next/head";
 import Card from "../components/card/card";
 import Header from "../components/header/header";
 import Loanding from "../components/loading/Loanding";
-import styles from "../styles/reviewsPage.module.scss";
+import styles from "../styles/ReviewsPage.module.scss";
 
 import { BiSearch } from "react-icons/bi";
 
@@ -17,7 +17,7 @@ export default function ReviewsPage() {
   const lowerSearch = search.toLowerCase();
 
   const filterMovie = movies.filter((movie) =>
-    movie.title.toLowerCase().includes(lowerSearch)
+    movie?.title?.toLowerCase().includes(lowerSearch)
   );
 
   useEffect(() => {
