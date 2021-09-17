@@ -1,7 +1,7 @@
 import styles from "./Header.module.scss";
 import Link from "next/link";
 import Menu from "./menu";
-
+import { HiUserCircle } from "react-icons/hi";
 export default function Header() {
   return (
     <div className={styles.header}>
@@ -16,6 +16,11 @@ export default function Header() {
 
         <Link href="/newReview">
           <a className={styles.headerItems}>New review</a>
+        </Link>
+        <Link href="/admin">
+          <a className={styles.headerItems}>
+            <HiUserCircle className={styles.icon} />
+          </a>
         </Link>
       </ul>
       <div className={styles.menuContainer}>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { HiMenuAlt2 } from "react-icons/hi";
+import { HiMenuAlt2, HiUserCircle } from "react-icons/hi";
+
 import styles from "./Header.module.scss";
 
 export default function Menu() {
@@ -30,6 +31,11 @@ export default function Menu() {
 
             <Link href="/newReview">
               <a className={styles.headerItems}>New review</a>
+            </Link>
+            <Link href="/admin">
+              <a className={styles.headerItems}>
+                <HiUserCircle className={styles.icon} />
+              </a>
             </Link>
           </ul>
         </div>
