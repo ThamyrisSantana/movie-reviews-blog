@@ -22,7 +22,7 @@
     box-shadow: 4px 2px 16px rgba(85, 85, 85, 0.25);
 
     h3 {
-      font-weight: 400;
+      font-weight: 600;
       span {
         font-weight: 600;
       }
@@ -62,7 +62,7 @@
     }
 
     button {
-      width: 12rem;
+      width: 8rem;
       height: 2.5rem;
 
       margin-top: 1rem;
@@ -71,13 +71,20 @@
       cursor: pointer;
 
       border: none;
-      background-color: #8778e6;
       color: #fff;
       font-weight: 600;
 
       &:hover {
         filter: brightness(0.9);
       }
+    }
+    .editButton {
+      background-color: #9184e6;
+    }
+
+    .deleteButton {
+      background-color: #ee6585;
+      margin-left: 1.5rem;
     }
   }
 }
