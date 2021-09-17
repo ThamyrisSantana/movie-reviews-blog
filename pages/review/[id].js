@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import styles from "./reviews.module.scss";
 
-import Link from "next/link";
 import Head from "next/head";
 import Header from "../../components/header/header";
 import Loanding from "../../components/loading/Loanding";
@@ -69,9 +68,6 @@ export default function Review() {
                   <br />
                 </span>
               </h1>
-              <Link href={`/editReview/${id}`}>
-                <a>Edit review</a>
-              </Link>
             </div>
             <p>{movie.review}</p>
           </section>
