@@ -1,0 +1,83 @@
+.main {
+  width: 100%;
+  height: 77vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  color: #6d6d6d;
+
+  .inputContainer {
+    width: 35rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: #fff;
+    border-radius: 17px;
+    padding: 2rem 0;
+    box-shadow: 4px 2px 16px rgba(85, 85, 85, 0.25);
+
+    h3 {
+      font-weight: 400;
+      span {
+        font-weight: 600;
+      }
+    }
+
+    input {
+      width: 30em;
+      float: left;
+      height: 2.7rem;
+      margin: 1rem;
+
+      color: #6d6d6d;
+      font-weight: 600;
+
+      border: 1.7px solid #c5c5c5;
+      background-color: #eeeeee6e;
+      border-radius: 5px;
+      padding-left: 1rem;
+
+      overflow-wrap: break-word;
+
+      &:focus {
+        outline: none;
+        background-color: #fff;
+        border: 1px solid #8778e6;
+      }
+
+      &::placeholder {
+        color: rgb(161, 160, 160);
+        font-weight: 500;
+      }
+    }
+
+    .description,
+    .review {
+      height: 7rem;
+    }
+
+    button {
+      width: 12rem;
+      height: 2.5rem;
+
+      margin-top: 1rem;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+
+      border: none;
+      background-color: #8778e6;
+      color: #fff;
+      font-weight: 600;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+}
