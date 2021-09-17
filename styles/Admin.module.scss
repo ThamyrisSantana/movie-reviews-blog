@@ -1,0 +1,53 @@
+.container {
+  width: 100%;
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .box {
+      background-color: #fff;
+      border-radius: 17px;
+      padding: 2rem 0;
+      box-shadow: 4px 2px 16px rgba(85, 85, 85, 0.25);
+
+      padding: 3rem;
+
+      .movieContainer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+
+        &:hover {
+          filter: brightness(0.9);
+        }
+
+        .buttons {
+          margin-left: 2rem;
+
+          .trashButton {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 1rem;
+            color: #ef3c66;
+          }
+
+          .editButton {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            // margin-left: 1rem;
+            color: #3cef72;
+          }
+        }
+      }
+    }
+  }
+}
