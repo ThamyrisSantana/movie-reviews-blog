@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/header/header";
 import Head from "next/head";
 import styles from "../styles/NewReview.module.scss";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function NewReview() {
   const [movie, setMovie] = useState({});
@@ -24,8 +25,11 @@ export default function NewReview() {
       review: review,
       director: director,
     };
-
     setnewReview(newReview);
+
+    setDescription(undefined);
+
+    toast.success("Review added", { icon: "💜" });
   }
 
   useEffect(() => {
@@ -98,10 +102,11 @@ export default function NewReview() {
           <button
             type="submit"
             onClick={addReview}
-            disabled={movieTitle === undefined}
+            disabled={movieTitle === ""}
           >
             Add review
           </button>
+          <Toaster />
         </div>
       </main>
     </div>
