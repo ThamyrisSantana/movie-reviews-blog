@@ -5,8 +5,8 @@ import styles from "./reviews.module.scss";
 
 import Link from "next/link";
 import Head from "next/head";
-import Header from "../components/header/header";
-import Loanding from "../components/loading/Loanding";
+import Header from "../../components/header/header";
+import Loanding from "../../components/loading/Loanding";
 import { HiStar } from "react-icons/hi";
 
 export default function Review() {
@@ -69,7 +69,7 @@ export default function Review() {
                   <br />
                 </span>
               </h1>
-              <Link href="../editReview.js">
+              <Link href={`/editReview/${id}`}>
                 <a>Edit review</a>
               </Link>
             </div>
