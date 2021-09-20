@@ -1,0 +1,32 @@
+.modalBackground {
+  width: 100vw;
+  height: 90vh;
+
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #edeef7;
+
+  .modalContainer {
+    padding: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff;
+    box-shadow: 4px 2px 16px rgba(85, 85, 85, 0.192);
+
+    border-radius: 1rem;
+    .delete {
+      background-color: #ee6585;
+    }
+
+    .cancel {
+      background-color: #9184e6;
+      margin-right: 1rem;
+    }
+  }
+}
