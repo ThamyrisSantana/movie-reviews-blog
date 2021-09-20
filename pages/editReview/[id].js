@@ -5,11 +5,16 @@ import Head from "next/head";
 import styles from "./editReview.module.scss";
 import Header from "../../components/header/header";
 import toast, { Toaster } from "react-hot-toast";
+import Modal from "../../components/modal/modal";
 
 export default function EditReview() {
-  const [movieData, setMovieData] = useState(undefined);
+  const [movie, setMovie] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   const [newReview, setnewReview] = useState({});
+
   const [deletedStatus, setDeletedStatus] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const [movieTitle, setMovieTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -21,7 +26,7 @@ export default function EditReview() {
   const router = useRouter();
   const id = router.query.id;
 
-  console.log(movieData);
+  // console.log(movie);
 
   useEffect(() => {
     async function addMovie() {
@@ -31,11 +36,11 @@ export default function EditReview() {
         body: JSON.stringify(newReview),
       };
       const api = await fetch(
-        `http://localhost:3000/movies/${id}`,
+        "http://localhost:3000/movies/" + id,
         requestOptions
       );
       const data = await api.json();
-      setMovieData(data.id);
+      setMovie(data.id);
     }
 
     addMovie();
@@ -43,14 +48,32 @@ export default function EditReview() {
 
   useEffect(() => {
     async function loadData() {
-      const api = await fetch(`http://localhost:3000/movies/${id}`);
+      setIsLoading(true);
+      const api = await fetch("http://localhost:3000/movies/" + id);
       const result = await api.json();
-      setMovieData(result);
+      setMovie(result);
+      setIsLoading(false);
     }
     if (id) {
       loadData();
     }
   }, [id]);
+
+  useEffect(() => {
+    async function remove() {
+      if (deletedStatus === true) {
+        fetch(`http://localhost:3000/movies/${id}`, {
+          method: "DELETE",
+        }).then((result) => {
+          result.json().then((resp) => {
+            setMovie(resp);
+          });
+        });
+        toast.success("Review deleted");
+      }
+    }
+    remove();
+  }, [id, deletedStatus]);
 
   function updateReview() {
     const newReview = {
@@ -67,19 +90,7 @@ export default function EditReview() {
   }
 
   function deleteReview() {
-    const confirm = window.confirm("Do you really want to delete?");
-
-    if (confirm === true) {
-      fetch(`http://localhost:3000/movies/${id}`, {
-        method: "DELETE",
-      }).then((result) => {
-        result.json().then((resp) => {
-          setMovieData(resp);
-        });
-      });
-
-      setDeletedStatus(true);
-    }
+    openModal ? setOpenModal(false) : setOpenModal(true);
   }
 
   return (
@@ -90,79 +101,99 @@ export default function EditReview() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+
       <main className={styles.main}>
-        {deletedStatus ? (
-          <div> Review Deleted </div>
+        {isLoading ? (
+          <div>Loading...</div>
         ) : (
-          <div className={styles.inputContainer}>
-            <h3>Edit review</h3>
-            <input
-              className={styles.title}
-              value={movieData?.title}
-              placeholder="Title"
-              onChange={(e) => setMovieTitle(e.target.value)}
-              type="text"
-            />
-            <input
-              className={styles.stars}
-              value={movieData?.stars}
-              placeholder="Stars"
-              onChange={(e) => setStars(e.target.value)}
-              type="text"
-            />
+          <>
+            {deletedStatus ? (
+              <div> Review Deleted </div>
+            ) : (
+              <div className={styles.formContainer}>
+                <h3>{movie?.title}</h3>
+                <input
+                  className={styles.title}
+                  defaultValue={movie?.title}
+                  placeholder="Title"
+                  onChange={(e) => setMovieTitle(e.target.value)}
+                  type="text"
+                  required
+                />
+                <input
+                  className={styles.stars}
+                  defaultValue={movie?.stars}
+                  placeholder="Stars"
+                  onChange={(e) => setStars(e.target.value)}
+                  type="text"
+                  required
+                />
 
-            <input
-              className={styles.director}
-              value={movieData?.director}
-              placeholder="Director"
-              onChange={(e) => setDirector(e.target.value)}
-              type="text"
-            />
-            <input
-              className={styles.poster}
-              value={movieData?.movieImg}
-              placeholder="Poster url"
-              onChange={(e) => setMovieImg(e.target.value)}
-              type="text"
-            />
+                <input
+                  className={styles.director}
+                  defaultValue={movie?.director}
+                  placeholder="Director"
+                  onChange={(e) => setDirector(e.target.value)}
+                  type="text"
+                  required
+                />
+                <input
+                  className={styles.poster}
+                  defaultValue={movie?.movieImg}
+                  placeholder="Poster url"
+                  onChange={(e) => setMovieImg(e.target.value)}
+                  type="text"
+                  required
+                />
 
-            <input
-              className={styles.description}
-              value={movieData?.description}
-              placeholder="Description"
-              onChange={(e) => setDescription(e.target.value)}
-              type="text"
-            />
-            <input
-              className={styles.review}
-              value={movieData?.review}
-              placeholder="Review"
-              onChange={(e) => setReview(e.target.value)}
-              type="text"
-            />
+                <input
+                  className={styles.description}
+                  defaultValue={movie?.description}
+                  placeholder="Description"
+                  onChange={(e) => setDescription(e.target.value)}
+                  type="text"
+                  required
+                />
+                <input
+                  className={styles.review}
+                  defaultValue={movie?.review}
+                  placeholder="Review"
+                  onChange={(e) => setReview(e.target.value)}
+                  type="text"
+                  required
+                />
 
-            <div>
-              <button
-                className={styles.editButton}
-                type="submit"
-                onClick={updateReview}
-                disabled={movieTitle === undefined}
-              >
-                Update
-              </button>
+                <div>
+                  <button
+                    className={styles.editButton}
+                    type="submit"
+                    onClick={updateReview}
+                    disabled={movieTitle === undefined}
+                  >
+                    Update
+                  </button>
 
-              <button
-                className={styles.deleteButton}
-                type="submit"
-                onClick={deleteReview}
-                disabled={movieTitle === undefined}
-              >
-                Remove
-              </button>
-            </div>
+                  <button
+                    className={styles.deleteButton}
+                    type="submit"
+                    onClick={deleteReview}
+                    disabled={movieTitle === undefined}
+                  >
+                    Remove
+                  </button>
+                </div>
 
-            <Toaster />
-          </div>
+                {openModal && (
+                  <Modal
+                    setDeletedStatus={setDeletedStatus}
+                    deleteReview={deleteReview}
+                    setOpenModal={setOpenModal}
+                  />
+                )}
+                <Toaster />
+              </div>
+            )}
+          </>
         )}
       </main>
     </div>
