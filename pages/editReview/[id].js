@@ -87,7 +87,9 @@ export default function EditReview() {
     remove();
   }, [id, deletedStatus]);
 
-  function updateReview() {
+  function updateReview(e) {
+    e.preventDefault();
+
     const newReview = {
       title: movieTitle,
       description: description,
@@ -105,7 +107,9 @@ export default function EditReview() {
     }
   }
 
-  function deleteReview() {
+  function deleteReview(e) {
+    e.preventDefault();
+
     openModal ? setOpenModal(false) : setOpenModal(true);
   }
 
