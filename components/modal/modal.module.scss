@@ -1,12 +1,13 @@
 .modalBackground {
   width: 100vw;
-  height: 90vh;
+  height: 110vh;
 
+  // margin-top: 1.3rem;
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #edeef7;
+  background-color: #2c2e4391;
 
   .modalContainer {
     padding: 3rem;
@@ -17,16 +18,34 @@
     justify-content: center;
 
     background-color: #fff;
-    box-shadow: 4px 2px 16px rgba(85, 85, 85, 0.192);
+    box-shadow: 4px 4px 16px rgba(56, 56, 56, 0.192);
 
     border-radius: 1rem;
-    .delete {
-      background-color: #ee6585;
-    }
 
+    button {
+      width: 8rem;
+      height: 2.5rem;
+
+      margin-top: 1rem;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+
+      border: none;
+      color: #fff;
+      font-weight: 600;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
     .cancel {
       background-color: #9184e6;
-      margin-right: 1rem;
+    }
+
+    .delete {
+      background-color: #ee6585;
+      margin-left: 1.5rem;
     }
   }
 }
