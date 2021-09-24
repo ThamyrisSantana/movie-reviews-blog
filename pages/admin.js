@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 import styles from "../styles/Admin.module.scss";
 import Loanding from "../components/loading/Loanding";
 import Header from "../components/header/header";
 
-import { HiPencil } from "react-icons/hi";
+import { HiPencil, HiOutlinePlusSm } from "react-icons/hi";
 
 export default function AdminPage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,10 +24,6 @@ export default function AdminPage() {
     loadData();
   }, []);
 
-  function getId(id) {
-    location.href = `/editReview/${id}`;
-  }
-
   return (
     <div className={styles.container}>
       <Head>
@@ -35,31 +32,36 @@ export default function AdminPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <h3>hello</h3>
       {isLoading ? (
         <div>
           <Loanding />
         </div>
       ) : (
         <main className={styles.main}>
-          <ol className={styles.box}>
+          <div className={styles.addButtonContainer}>
+            <Link href="/newReview">
+              <a className={styles.addButton}>
+                <HiOutlinePlusSm className={styles.addButtonIcon} />
+                Add review
+              </a>
+            </Link>
+          </div>
+          <div className={styles.box}>
             {movies.map((movie) => (
-              <li className={styles.movieContainer} key={movie.id}>
-                <span>{movie.title}</span>
+              <div className={styles.movieContainer} key={movie.id}>
+                <Link href={`/review/${movie.id}`}>
+                  <a>{movie.title}</a>
+                </Link>
                 <div className={styles.buttons}>
-                  <a
-                    onClick={() => getId(movie.id)}
-                    className={styles.editButton}
-                  >
-                    <HiPencil />
-                  </a>
-                  {/* <button className={styles.trashButton}>
-                    <HiOutlineTrash />
-                  </button> */}
+                  <Link href={`/editReview/${movie.id}`}>
+                    <a className={styles.editButton}>
+                      <HiPencil />
+                    </a>
+                  </Link>
                 </div>
-              </li>
+              </div>
             ))}
-          </ol>
+          </div>
         </main>
       )}
     </div>
