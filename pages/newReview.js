@@ -6,6 +6,8 @@ import toast, { Toaster } from "react-hot-toast";
 
 export default function NewReview() {
   const [movie, setMovie] = useState({});
+  const [newReview, setnewReview] = useState({});
+  const [sendNewReview, setSendNewReview] = useState(false);
 
   const [movieTitle, setMovieTitle] = useState(undefined);
   const [description, setDescription] = useState(undefined);
@@ -14,40 +16,50 @@ export default function NewReview() {
   const [review, setReview] = useState(undefined);
   const [stars, setStars] = useState(undefined);
 
-  const [newReview, setnewReview] = useState({});
+  const allInfos =
+    movieTitle && movieImg && description && director && review && stars;
 
-  function addReview() {
-    const newReview = {
-      title: movieTitle,
-      description: description,
-      stars: stars,
-      movieImg: movieImg,
-      review: review,
-      director: director,
-    };
-    setnewReview(newReview);
+  console.log(movie);
 
-    setDescription(undefined);
+  function addReview(e) {
+    e.preventDefault();
 
-    toast.success("Review added", { icon: "💜" });
+    if (allInfos != undefined && allInfos !== "") {
+      toast.success("Review added", { icon: "💜" });
+
+      const newReviewData = {
+        title: movieTitle,
+        description: description,
+        stars: stars,
+        movieImg: movieImg,
+        review: review,
+        director: director,
+      };
+
+      setnewReview(newReviewData);
+      setSendNewReview(true);
+    } else {
+      toast.error("Please fill in all fields");
+    }
   }
 
   useEffect(() => {
-    async function addMovie() {
-      const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newReview),
-      };
-      const api = await fetch("http://localhost:3000/movies", requestOptions);
-      const data = await api.json();
-      setMovie(data);
+    async function addingReview() {
+      if (sendNewReview === true) {
+        const requestOptions = {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newReview),
+        };
+        fetch("http://localhost:3000/movies", requestOptions)
+          .then((response) => response.json())
+          .then((data) => setMovie(data.id));
+      } else {
+        null;
+      }
     }
-
-    addMovie();
-  }, [newReview]);
-
-  console.log(movie);
+    addingReview();
+  }, [sendNewReview, newReview]);
 
   return (
     <div>
@@ -60,52 +72,93 @@ export default function NewReview() {
       <main className={styles.main}>
         <div className={styles.inputContainer}>
           <h1>Add a new review</h1>
-          <input
-            className={styles.title}
-            placeholder="Title"
-            onChange={(e) => setMovieTitle(e.target.value)}
-            type="text"
-          />
-          <input
-            className={styles.stars}
-            placeholder="Stars"
-            onChange={(e) => setStars(e.target.value)}
-            type="number"
-          />
+          <form>
+            <div className={styles.inputDiv}>
+              <label htmlFor="Title">Title</label>
+              <input
+                className={styles.title}
+                placeholder="Title"
+                onChange={(e) => setMovieTitle(e.target.value)}
+                type="text"
+                required="required"
+                name="Title"
+                id="Title"
+              />
+            </div>
 
-          <input
-            className={styles.director}
-            placeholder="Director"
-            onChange={(e) => setDirector(e.target.value)}
-            type="text"
-          />
-          <input
-            className={styles.poster}
-            placeholder="Poster"
-            onChange={(e) => setMovieImg(e.target.value)}
-            type="text"
-          />
+            <div className={styles.inputDiv}>
+              <label htmlFor="Stars">Stars</label>
+              <input
+                className={styles.stars}
+                placeholder="Stars"
+                onChange={(e) => setStars(e.target.value)}
+                type="number"
+                required="required"
+                name="Stars"
+                id="Stars"
+              />
+            </div>
 
-          <input
-            className={styles.description}
-            placeholder="Description"
-            onChange={(e) => setDescription(e.target.value)}
-            type="text"
-          />
-          <input
-            className={styles.review}
-            placeholder="Review"
-            onChange={(e) => setReview(e.target.value)}
-            type="text"
-          />
+            <div className={styles.inputDiv}>
+              <label htmlFor="Director">Director</label>
+              <input
+                className={styles.director}
+                placeholder="Director"
+                onChange={(e) => setDirector(e.target.value)}
+                type="text"
+                required="required"
+                name="Director"
+                id="Director"
+              />
+            </div>
 
-          <button
-            type="submit"
-            onClick={addReview}
-            disabled={movieTitle === ""}
-          >
-            Add review
-          </button>
+            <div className={styles.inputDiv}>
+              <label htmlFor="MovieImg">Poster Url</label>
+              <input
+                className={styles.poster}
+                placeholder="Poster"
+                onChange={(e) => setMovieImg(e.target.value)}
+                type="text"
+                required="required"
+                name="Movie Image"
+                id="MovieImg"
+              />
+            </div>
+
+            <div className={styles.inputDiv}>
+              <label htmlFor="Description">Description</label>
+              <input
+                className={styles.description}
+                placeholder="Description"
+                onChange={(e) => setDescription(e.target.value)}
+                type="text"
+                required="required"
+                name="Description"
+                id="Description"
+              />
+            </div>
+
+            <div className={styles.inputDiv}>
+              <label htmlFor="Review">Review</label>
+              <input
+                className={styles.review}
+                placeholder="Review"
+                onChange={(e) => setReview(e.target.value)}
+                type="text"
+                required="required"
+                name="Review"
+                id="Review"
+              />
+            </div>
+
+            <button
+              type="submit"
+              onClick={addReview}
+              disabled={movieTitle === ""}
+            >
+              Add review
+            </button>
+          </form>
           <Toaster />
         </div>
       </main>
