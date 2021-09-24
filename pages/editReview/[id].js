@@ -6,6 +6,7 @@ import styles from "./editReview.module.scss";
 import Header from "../../components/header/header";
 import toast, { Toaster } from "react-hot-toast";
 import Modal from "../../components/modal/modal";
+import EditReviewForm from "../../components/form-edit/EditReviewForm";
 
 export default function EditReview() {
   const [movie, setMovie] = useState([]);
@@ -23,28 +24,37 @@ export default function EditReview() {
   const [review, setReview] = useState("");
   const [stars, setStars] = useState("");
 
+  const allFields =
+    movieTitle && movieImg && description && director && review && stars;
+
   const router = useRouter();
   const id = router.query.id;
 
-  // console.log(movie);
+  console.log(movieTitle);
+
+  // PATCH REQUEST -------------------------------------------------------------
 
   useEffect(() => {
     async function addMovie() {
-      const requestOptions = {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newReview),
-      };
-      const api = await fetch(
-        "http://localhost:3000/movies/" + id,
-        requestOptions
-      );
-      const data = await api.json();
-      setMovie(data.id);
+      if (isLoading === false && allFields !== undefined && allFields !== "") {
+        const requestOptions = {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newReview),
+        };
+        const api = await fetch(
+          "http://localhost:3000/movies/" + id,
+          requestOptions
+        );
+        const data = await api.json();
+        setMovie(data.id);
+      }
     }
 
     addMovie();
-  }, [newReview, id]);
+  }, [newReview, id, isLoading, allFields]);
+
+  // GET REQUEST -------------------------------------------------------------
 
   useEffect(() => {
     async function loadData() {
@@ -58,6 +68,8 @@ export default function EditReview() {
       loadData();
     }
   }, [id]);
+
+  // DELETE REQUEST -------------------------------------------------------------
 
   useEffect(() => {
     async function remove() {
@@ -86,7 +98,11 @@ export default function EditReview() {
     };
 
     setnewReview(newReview);
-    toast.success("Review edited", { icon: "💜" });
+    if (allFields != undefined && allFields !== "") {
+      toast.success("Review edited", { icon: "💜" });
+    } else {
+      toast.error("Please update all fields");
+    }
   }
 
   function deleteReview() {
@@ -111,77 +127,17 @@ export default function EditReview() {
               <div> Review Deleted </div>
             ) : (
               <div className={styles.formContainer}>
-                <h3>{movie?.title}</h3>
-                <input
-                  className={styles.title}
-                  defaultValue={movie?.title}
-                  placeholder="Title"
-                  onChange={(e) => setMovieTitle(e.target.value)}
-                  type="text"
-                  required
+                <EditReviewForm
+                  setMovieTitle={setMovieTitle}
+                  setStars={setStars}
+                  setDescription={setDescription}
+                  setReview={setReview}
+                  setDirector={setDirector}
+                  setMovieImg={setMovieImg}
+                  movie={movie}
+                  updateReview={updateReview}
+                  deleteReview={deleteReview}
                 />
-                <input
-                  className={styles.stars}
-                  defaultValue={movie?.stars}
-                  placeholder="Stars"
-                  onChange={(e) => setStars(e.target.value)}
-                  type="text"
-                  required
-                />
-
-                <input
-                  className={styles.director}
-                  defaultValue={movie?.director}
-                  placeholder="Director"
-                  onChange={(e) => setDirector(e.target.value)}
-                  type="text"
-                  required
-                />
-                <input
-                  className={styles.poster}
-                  defaultValue={movie?.movieImg}
-                  placeholder="Poster url"
-                  onChange={(e) => setMovieImg(e.target.value)}
-                  type="text"
-                  required
-                />
-
-                <input
-                  className={styles.description}
-                  defaultValue={movie?.description}
-                  placeholder="Description"
-                  onChange={(e) => setDescription(e.target.value)}
-                  type="text"
-                  required
-                />
-                <input
-                  className={styles.review}
-                  defaultValue={movie?.review}
-                  placeholder="Review"
-                  onChange={(e) => setReview(e.target.value)}
-                  type="text"
-                  required
-                />
-
-                <div>
-                  <button
-                    className={styles.editButton}
-                    type="submit"
-                    onClick={updateReview}
-                    disabled={movieTitle === undefined}
-                  >
-                    Update
-                  </button>
-
-                  <button
-                    className={styles.deleteButton}
-                    type="submit"
-                    onClick={deleteReview}
-                    disabled={movieTitle === undefined}
-                  >
-                    Remove
-                  </button>
-                </div>
 
                 {openModal && (
                   <Modal
