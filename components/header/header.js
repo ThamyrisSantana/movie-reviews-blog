@@ -10,7 +10,7 @@ export default function Header() {
       <div className={styles.iconContainer}>
         <Link href="/">
           <a>
-            <img src="/movie-icon.svg" alt="" />
+            <img src="/movie-icon.svg" alt="Logo" />
           </a>
         </Link>
       </div>
