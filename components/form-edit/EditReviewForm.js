@@ -87,17 +87,13 @@ const EditReviewForm = (props) => {
         </div>
 
         <div>
-          <button
-            className={styles.editButton}
-            type="submit"
-            onClick={props.updateReview}
-          >
+          <button className={styles.editButton} onClick={props.updateReview}>
             Update
           </button>
 
           <button
+            type="button"
             className={styles.deleteButton}
-            type="submit"
             onClick={props.deleteReview}
           >
             Remove
