@@ -1,10 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "./Header.module.scss";
 import Link from "next/link";
+
 import Menu from "./menu";
 import { HiUserCircle } from "react-icons/hi";
 export default function Header() {
   return (
     <div className={styles.header}>
+      <div className={styles.iconContainer}>
+        <Link href="/">
+          <a>
+            <img src="/movie-icon.svg" alt="" />
+          </a>
+        </Link>
+      </div>
       <ul className={styles.headerItemsContainer}>
         <Link href="/">
           <a className={styles.headerItems}>Home</a>
@@ -14,8 +23,8 @@ export default function Header() {
           <a className={styles.headerItems}>Reviews</a>
         </Link>
 
-        <Link href="/newReview">
-          <a className={styles.headerItems}>New review</a>
+        <Link href="/favorites">
+          <a className={styles.headerItems}>Favorites</a>
         </Link>
         <Link href="/admin">
           <a className={styles.headerItems}>
