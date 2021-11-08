@@ -14,7 +14,8 @@ Projeto pessoal de um blog de reviews de filmes com opção de adicionar,remover
 ## Pacotes
 
 - `react-hot-toast`: Disponibiliza toasts customizáveis - [link](https://react-hot-toast.com/)
--  `react-icons`: Disponibiliza selects mais flexíveis - [link](https://react-icons.github.io/react-icons/)
+-  `react-icons`: Disponibiliza icons components - [link](https://react-icons.github.io/react-icons/)
+-   `typewriter-effect`: Disponibiliza elefeito typewriter - [link](https://github.com/tameemsafi/typewriterjs)
 
 ## Imagens 
 https://user-images.githubusercontent.com/73114457/140817843-2f7bcd4e-47e8-4b30-bdde-2c4a8f9caef4.mp4
