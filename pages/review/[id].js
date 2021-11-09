@@ -16,7 +16,6 @@ import toast, { Toaster } from "react-hot-toast";
 export default function Review() {
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState(undefined);
-  const [favoriteBtn, setFavoriteBtn] = useState(false);
 
   const [favorites, setFavorites] = useState([]);
 
@@ -50,7 +49,6 @@ export default function Review() {
     });
 
     setFavorites(newFavorite);
-    setFavoriteBtn(true);
   }
 
   function removeFromFavorite() {
@@ -127,7 +125,7 @@ export default function Review() {
                 <Toaster />
               </button>
             </div>
-            {favoriteBtn ? <span>favorite</span> : <span>not favorite</span>}
+
             <p>{movie.review}</p>
           </section>
         </main>
