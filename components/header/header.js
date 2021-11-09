@@ -6,7 +6,7 @@ import Menu from "./menu";
 import { HiUserCircle } from "react-icons/hi";
 export default function Header() {
   return (
-    <div className={styles.header}>
+    <nav className={styles.header}>
       <div className={styles.iconContainer}>
         <Link href="/">
           <a>
@@ -35,6 +35,6 @@ export default function Header() {
       <div className={styles.menuContainer}>
         <Menu />
       </div>
-    </div>
+    </nav>
   );
 }
