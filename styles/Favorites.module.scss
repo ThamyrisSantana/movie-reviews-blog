@@ -1,0 +1,63 @@
+.container {
+  width: 100%;
+  min-height: 99.5vh;
+
+  display: flex;
+  flex-direction: column;
+
+  .main {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .movieSection {
+      width: 80%;
+
+      margin-top: 3.5rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .favoritesTitle {
+        width: 100%;
+        color: #484747;
+
+        h1 {
+          font-size: 1.5rem;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin: 0;
+
+          p {
+            font-size: 1.3rem;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .line {
+        width: 100%;
+        height: 1.5px;
+        background-color: #48474731;
+      }
+
+      .cardsContainer {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        gap: 2.5rem;
+
+        flex: 1;
+      }
+    }
+  }
+}
