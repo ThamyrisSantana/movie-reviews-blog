@@ -27,3 +27,9 @@ https://user-images.githubusercontent.com/73114457/140817843-2f7bcd4e-47e8-4b30-
 ![Preview- Tela Admin](https://cdn.discordapp.com/attachments/877998509066948618/906876734882844742/Admin.png)
 
 ![Preview- Tela  Edit](https://cdn.discordapp.com/attachments/877998509066948618/907388756057813072/Edit_Review_6.png)
+
+![Preview- Tela  Edit](https://cdn.discordapp.com/attachments/877998509066948618/906876720177639444/Edit_Review_4.png)
+
+![Preview- Tela  Edit](https://cdn.discordapp.com/attachments/877998509066948618/906876717023510559/Edit_Review_5.png)
+
+
