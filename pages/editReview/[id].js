@@ -107,7 +107,6 @@ export default function EditReview() {
   }
 
   function deleteReview() {
-    toast.success("Review deleted");
     openModal ? setOpenModal(false) : setOpenModal(true);
   }
 
