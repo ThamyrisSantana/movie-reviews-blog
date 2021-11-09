@@ -7,6 +7,7 @@ import Loanding from "../components/loading/Loanding";
 import styles from "../styles/Favorites.module.scss";
 import Card from "../components/card/card";
 import Header from "../components/header/header";
+import { HiHeart } from "react-icons/hi";
 
 export default function Favorites() {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,17 +38,28 @@ export default function Favorites() {
           <Loanding />
         </main>
       ) : (
-        <main className={styles.movieSection}>
-          {favorites.map((movie) => (
-            <div className={styles.cardContainer} key={movie.id}>
-              <Card
-                title={movie.title}
-                image={movie.movieImg}
-                stars={movie.stars}
-                id={movie.id}
-              />
+        <main className={styles.main}>
+          <section className={styles.movieSection}>
+            <div className={styles.favoritesTitle}>
+              <h1>
+                <HiHeart />
+                Favorites - <p>{favorites.length}</p>
+              </h1>
+              <div className={styles.line} />
             </div>
-          ))}
+            <div className={styles.cardsContainer}>
+              {favorites.map((movie) => (
+                <div className={styles.card} key={movie.id}>
+                  <Card
+                    title={movie.title}
+                    image={movie.movieImg}
+                    stars={movie.stars}
+                    id={movie.id}
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
         </main>
       )}
     </div>
